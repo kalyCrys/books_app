@@ -47,15 +47,65 @@ class _MyHomePageState extends State<MyHomePage> {
       
         title: Text(widget.title),
       ),
-      body: ListView(
+      body: GridView.count(
           //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisCount: 2,
+          childAspectRatio: 9/16,
           children: <Widget>[
-            Image.asset('assets/img1.jpg'),
-            Image.asset('assets/img2.jpg'),
-            Image.asset('assets/img3.jpg'),
-            Image.asset('assets/img4.jpg'),
-            Image.asset('assets/img5.jpg'),
-            Image.asset('assets/img6.jpg'),
+
+            Column(
+              children: [
+                Container(child:Image.asset('assets/img1.jpg', fit: BoxFit.cover,)),
+                Text("É assim que começa", style: PrimaryTitle,),
+                Text("Colleen Hoover", style: subtitleStyle,),
+              ],
+            ),
+           
+    
+            Column(
+              children: [
+                Image.asset('assets/img2.jpg', fit: BoxFit.cover,),
+                Text("A biblioteca da meia-noite", style: PrimaryTitle,),
+                Text("Matt Haig", style: subtitleStyle,),
+              ],
+            ),
+            
+            
+            Column(
+              children: [
+                Image.asset('assets/img3.jpg',fit: BoxFit.cover),
+                Text("As coisas que você só vê quando desacelera", style: PrimaryTitle,),
+                Text("Haemin Sunim", style: subtitleStyle,),
+              ],
+            ),
+            
+            
+            Column(
+              children: [
+                Image.asset('assets/img4.jpg', fit: BoxFit.cover),
+                Text("O lado feio do amor", style: PrimaryTitle,),
+                Text("Colleen Hoover", style: subtitleStyle,),
+              ],
+            ),
+            
+            
+            Column(
+              children: [
+                Image.asset('assets/img5.jpg', fit: BoxFit.cover),
+                Text("Daisy Jones & the six", style: PrimaryTitle,),
+                Text("Taylor Jenkins Reid", style: subtitleStyle,),
+              ],
+            ),
+            
+
+            Column(
+              children: [
+                Image.asset('assets/img6.jpg', fit: BoxFit.cover),
+                 Text("É assim que começa", style: PrimaryTitle,),
+                Text("Colleen Hoover", style: subtitleStyle,),
+              ],
+            ),
+            
             
             
           ],
@@ -64,4 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
        // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  TextStyle subtitleStyle = TextStyle(fontSize: 15, color: Colors.grey);
+  TextStyle PrimaryTitle = TextStyle(fontSize: 20, color: Colors.black);
 }
