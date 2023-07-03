@@ -52,10 +52,11 @@ class HomeScreen extends StatelessWidget {
           itemCount: livros.length,
           //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              childAspectRatio: 9 / 17,
-              crossAxisSpacing: 15),
+            crossAxisCount: 2,
+            mainAxisSpacing: 10,
+            childAspectRatio: 9 / 17,
+            crossAxisSpacing: 15,
+          ),
           padding: const EdgeInsets.all(15),
           // crossAxisCount: 2,
           // mainAxisSpacing: 10,
@@ -85,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   livro["nome"],
                   style: PrimaryTitle,
-                  maxLines: 1,
+                  maxLines: 2,
                 ),
                 Text(
                   livro["autor"],
