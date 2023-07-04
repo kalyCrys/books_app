@@ -13,8 +13,9 @@ class SinopseScreen extends StatelessWidget {
       appBar: AppBar(
           //title: Text(livro["nome"]),
           ),
-      body: ListView(
-        children: [
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
@@ -26,15 +27,38 @@ class SinopseScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
-            Text(
-              livro["nome"],
-              style: TextStyle(
-                fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Text(
+                livro["nome"],
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.fromLTRB(0, 5, 0, 20),
+              child: Text(
+                livro["autor"],
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Row(
+              textDirection: TextDirection.ltr,
+              children: [
+                Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 10)),
+                Title(
+                    color: Colors.black,
+                    child: Text(
+                      "Sinopse:",
+                      style: TextStyle(fontSize: 16),
+                      textAlign: TextAlign.left,
+                    )),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
               child: Text(
                 livro["sinopse"],
                 style: TextStyle(fontSize: 16),
@@ -43,7 +67,7 @@ class SinopseScreen extends StatelessWidget {
             ),
           ],
         ),
-      
+      ),
     );
   }
 }
