@@ -13,35 +13,37 @@ class SinopseScreen extends StatelessWidget {
       appBar: AppBar(
           //title: Text(livro["nome"]),
           ),
-      body: Column(
+      body: ListView(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              child: Image.asset(
-                livro["capa"],
-                fit: BoxFit.contain,
-                height: 350,
-                width: 300,
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: Image.asset(
+                  livro["capa"],
+                  fit: BoxFit.contain,
+                  height: 350,
+                  width: 300,
+                ),
               ),
             ),
-          ),
-          Text(
-            livro["nome"],
-            style: TextStyle(
-              fontSize: 20,
+            
+            Text(
+              livro["nome"],
+              style: TextStyle(
+                fontSize: 20,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              livro["sinopse"],
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.left,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                livro["sinopse"],
+                style: TextStyle(fontSize: 16),
+                textAlign: TextAlign.left,
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      
     );
   }
 }
